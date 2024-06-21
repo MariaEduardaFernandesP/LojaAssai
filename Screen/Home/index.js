@@ -1,11 +1,9 @@
 import React from "react";
-import { Text, StyleSheet, View, Image, FlatList} from "react-native";
+import { Text, StyleSheet, View, Image, FlatList } from "react-native";
 import Header from "../../Components/Header";
 import Card from "../../Components/Card";
-import alimenticio from "../../data/index";
-import { ScrollView } from "react-native";
-import frios from "../../frios/index";
-import limpeza from "../../limpeza/index";
+import ROTINAS from "../../data/index";
+import { ScrollView } from "react-native-web";
 import Footer from "../../Components/Footer";
 
 
@@ -20,67 +18,33 @@ export default function Home(){
           uri: 'https://www.assai.com.br/sites/all/themes/assai_2024/styles/custom/ofertas-2024/images/banner.webp',
         }}
       />
-      <Text style={{color:"orange",fontWeight: "bold",alignSelf:"center",fontSize: 30, marginTop: 20,marginBottom: 15}}>Alimentício</Text>
-      <FlatList style={{alignSelf:"center"}}
-        data={alimenticio}
-        horizontal = {true}
+      <Text style={{color:"orange",fontWeight: "bold",fontSize: 35, marginTop: 30,marginBottom: 30, alignSelf:"center"}}>Nossos produtos: </Text>
+      <FlatList style={{width:'100%',}}
+        data={ROTINAS}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <Card
-            preco={item.preco}
+          <Card 
+          idProduto={item.id}
             titulo={item.titulo}
             imagem={item.imagem}
             descricao={item.descricao}
-            quantidade={item.quantidade}
-            categoria={item.categoria}
           />
         )}
+        numColumns={4}
+        contentContainerStyle={{ alignItems: 'center' }}
       />
-
-<Text style={{color:"orange",fontWeight: "bold",alignSelf:"center",fontSize: 30, marginTop: 20,marginBottom: 15}}>Frios / Carnes</Text>
-      <FlatList style={{alignSelf:"center"}}
-        data={frios}
-        horizontal = {true}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <Card
-             preco={item.preco}
-            titulo={item.titulo}
-            imagem={item.imagem}
-            descricao={item.descricao}
-            quantidade={item.quantidade}
-            categoria={item.categoria}
-          />
-        )}
-      />
-       <Text style={{color:"orange",fontWeight: "bold",alignSelf:"center",fontSize: 30, marginTop: 20,marginBottom: 15}}>Limpeza</Text>
-      <FlatList style={{alignSelf:"center"}}
-        data={limpeza}
-        horizontal = {true}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <Card
-             preco={item.preco}
-            titulo={item.titulo}
-            imagem={item.imagem}
-            descricao={item.descricao}
-            quantidade={item.quantidade}
-            categoria={item.categoria}
-          />
-        )}
-      />
-      <Text style={estilo.subtitulo}></Text>
       <Footer></Footer>
     </ScrollView>
     
   );
 }
 const estilo = StyleSheet.create({
-  container: {  
-      
-   //alignItems: "center",
+  container: {
+    
     backgroundColor: "white",
     paddingHorizontal: 20,
+    flex: 1, 
+    margin: 5
   },
 
   titulo: {
@@ -105,6 +69,5 @@ const estilo = StyleSheet.create({
     height: 500,
     //resizeMode: 'contain',
     alignSelf:"center",
-        
   }
 });

@@ -3,7 +3,7 @@ import estilo from "./style";
 export default function Header() {
   return (
     <>
-      <View style={{width: 1900, height:50, flexDirection: "row", alignItems: "center", justifyContent: "space-between",}}>
+      <View style={{ height:50, flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
         <TouchableOpacity >
         <Image
         style={estilo.logo}

@@ -5,6 +5,7 @@ export default function Footer() {
     <>
       <View
         style={{
+          marginTop:30,
           width: '100%',
           height:60,
          // flexDirection: "row",
@@ -15,7 +16,7 @@ export default function Footer() {
         }}
       >
         
-            <Text style={estilo.tituloCard}>Feito por: Vivian, Gheovana e Maria Eduarda Fernandes</Text>
+            <Text style={estilo.tituloCard}>Feito por:  Maria Eduarda Fernandes, Vivian e Gheovana</Text>
            
 
       </View>

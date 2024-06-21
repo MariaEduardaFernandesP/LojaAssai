@@ -45,12 +45,18 @@ const estilo = StyleSheet.create({
    //alignItems:'center',
    
    width:300,
-   height:500,
+   height:430,
    
   },
   textoCard: {
-    fontSize: 17,
+    fontSize: 16,
     marginTop: 5,
+
+  },
+  textoCardcateg: {
+    fontSize: 15,
+    marginTop: 5,
+    color: "#FF8C00"
 
   },
   textoCardquant: {
